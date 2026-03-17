@@ -1,9 +1,4 @@
-# Deep Reinforcement Learning - Assignment #2
-
-**Ben-Gurion University of the Negev**
-Faculty of Engineering Sciences | Department of Software and Information Systems
-
-**Authors:** Oz Elbaz (204388763), Ido Gurevich (205478068)
+# Deep Reinforcement Learning: Actor Critic
 
 ---
 
