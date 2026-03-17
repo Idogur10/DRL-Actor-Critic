@@ -10,7 +10,36 @@ This project implements and compares three policy gradient methods for solving t
 2. **REINFORCE with Baseline**
 3. **Advantage Actor-Critic (A2C)**
 
-The CartPole environment has a 4-dimensional continuous state space and 2 discrete actions (push left / push right). The goal is to balance a pole on a cart for as long as possible, with a maximum of 500 steps per episode.
+---
+
+## Environment: CartPole-v1 (OpenAI Gymnasium)
+
+All experiments in this project use the **CartPole-v1** environment from the [Gymnasium](https://gymnasium.farama.org/) library (formerly OpenAI Gym).
+
+A pole is attached by an un-actuated joint to a cart that moves along a frictionless track. The system is controlled by applying a force to the cart, pushing it either left or right. The pole starts upright, and the goal is to prevent it from falling over by balancing it for as long as possible.
+
+**State space:** A continuous 4-dimensional vector:
+| Index | Observation | Range |
+|---|---|---|
+| 0 | Cart position | -4.8 to 4.8 |
+| 1 | Cart velocity | -Inf to Inf |
+| 2 | Pole angle | -0.418 rad (~24°) to 0.418 rad |
+| 3 | Pole angular velocity | -Inf to Inf |
+
+**Action space:** 2 discrete actions:
+| Action | Description |
+|---|---|
+| 0 | Push cart to the left |
+| 1 | Push cart to the right |
+
+**Reward:** +1 for every time step the pole remains upright. The maximum reward per episode is **500** (the episode truncation limit).
+
+**Episode termination:** An episode ends when:
+- The pole angle exceeds ±12° from vertical
+- The cart position moves more than ±2.4 from center
+- The episode length reaches 500 steps
+
+This environment is a classic benchmark for reinforcement learning algorithms — simple enough to train quickly, yet non-trivial enough to reveal meaningful differences between methods.
 
 ---
 
